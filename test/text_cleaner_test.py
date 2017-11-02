@@ -1,7 +1,4 @@
 import unittest
-
-import utils
-print utils
 from utils import TextCleaner
 
 class TextCleanerTest(unittest.TestCase):
