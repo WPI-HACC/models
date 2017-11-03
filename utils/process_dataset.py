@@ -67,7 +67,7 @@ class ProcessDataset():
                     out.extend([[s, category, fn, i ] for i,s in enumerate(sent)])
             else:
                 with open("data/{0}/raw/{1}/{2}".format(dataset_path, category, fn), 'r') as df:
-                    sent = nltk.sent_tokenize(unicode(df.read(), errors='ignore'))
+                    sent = nltk.sent_tokenize(unicode(df.read(), errors='ignore').replace('\n', ' ').replace(',','^'))
                     out.extend([[ s, category, fn, i ] for i,s in enumerate(sent)])
         return out
 
